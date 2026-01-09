@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout pageTitle={`${entry.data.title} - Thomas Hanover`} description={entry.data.description}>
+	<div class="p-6">
+		<article class="max-w-3xl mx-auto">
+			<header class="mb-12">
+				<a href="/blog" class="text-cyan-300 hover:text-cyan-200 inline-flex items-center mb-6">
+					<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+					</svg>
+					Back to Blog
+				</a>
+				<h1 class="text-5xl font-bold mb-4">{entry.data.title}</h1>
+				<div class="flex items-center gap-4 text-slate-300">
+					<time datetime={entry.data.pubDate.toISOString()}>
+						{entry.data.pubDate.toLocaleDateString('en-US', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
+						})}
+					</time>
+					<span>•</span>
+					<span>{entry.data.author}</span>
+				</div>
+				{entry.data.tags && (
+					<div class="flex gap-2 mt-4">
+						{entry.data.tags.map((tag) => (
+							<a
+								href={`/blog/tag/${tag}`}
+								class="bg-cyan-700 px-3 py-1 rounded text-sm hover:bg-cyan-600 transition-colors"
+							>
+								{tag}
+							</a>
+						))}
+					</div>
+				)}
+			</header>
+
+			<div class="prose prose-invert prose-lg max-w-none
+				prose-headings:text-slate-100
+				prose-p:text-slate-200
+				prose-a:text-cyan-300 prose-a:no-underline hover:prose-a:text-cyan-200
+				prose-strong:text-slate-100
+				prose-code:text-cyan-300 prose-code:bg-cyan-900/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+				prose-pre:bg-cyan-900/30 prose-pre:border prose-pre:border-cyan-700
+				prose-ul:text-slate-200
+				prose-ol:text-slate-200
+				prose-li:text-slate-200
+				prose-h1:font-bold prose-h2:font-bold prose-h3:font-bold
+				">
+				<Content />
+			</div>
+
+			<section class="mt-12 pt-8 border-t border-cyan-700/50">
+				<h2 class="text-2xl font-bold mb-6">Comments</h2>
+				<div class="giscus"></div>
+			</section>
+
+			<footer class="mt-12 pt-8 border-t border-cyan-700/50">
+				<a href="/blog" class="text-cyan-300 hover:text-cyan-200 inline-flex items-center">
+					<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+					</svg>
+					Back to all posts
+				</a>
+			</footer>
+		</article>
+
+		<script is:inline>
+			const script = document.createElement('script');
+			script.src = 'https://giscus.app/client.js';
+			script.setAttribute('data-repo', 'thanover/webpage-astro');
+			script.setAttribute('data-repo-id', 'R_kgDOQ2X3Gg');
+			script.setAttribute('data-category', 'Announcements');
+			script.setAttribute('data-category-id', 'DIC_kwDOQ2X3Gs4C0vge');
+			script.setAttribute('data-mapping', 'pathname');
+			script.setAttribute('data-strict', '0');
+			script.setAttribute('data-reactions-enabled', '1');
+			script.setAttribute('data-emit-metadata', '0');
+			script.setAttribute('data-input-position', 'bottom');
+			script.setAttribute('data-theme', 'transparent_light');
+			script.setAttribute('data-lang', 'en');
+			script.setAttribute('crossorigin', 'anonymous');
+			script.async = true;
+
+			document.querySelector('.giscus').appendChild(script);
+		</script>
+	</div>
+</BaseLayout>
+
