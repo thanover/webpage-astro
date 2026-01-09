@@ -1,0 +1,182 @@
+/* Custom Giscus theme matching the webpage design */
+
+/* Main container */
+main {
+  background-color: rgba(21, 94, 117, 0.3) !important; /* cyan-800/30 */
+  backdrop-filter: blur(4px) !important;
+  border-radius: 0.5rem !important;
+  border: 1px solid rgba(14, 116, 144, 0.3) !important; /* cyan-700/30 */
+}
+
+/* Text colors */
+.gsc-comments,
+.gsc-comment,
+.gsc-comment-author,
+.gsc-comment-content,
+.gsc-reactions,
+.gsc-timeline,
+.gsc-header {
+  color: rgb(226, 232, 240) !important; /* slate-200 */
+}
+
+/* Links */
+a {
+  color: rgb(103, 232, 249) !important; /* cyan-300 */
+}
+
+a:hover {
+  color: rgb(165, 243, 252) !important; /* cyan-200 */
+}
+
+/* Dialogs and Modals - Make them opaque */
+.gsc-emoji-picker,
+.gsc-reactions-menu,
+dialog,
+[role="dialog"],
+.gsc-picker-container {
+  background-color: rgb(14, 116, 144) !important; /* cyan-700 - solid */
+  backdrop-filter: none !important;
+  border: 2px solid rgb(103, 232, 249) !important; /* cyan-300 */
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Emoji buttons in picker */
+.gsc-emoji-picker button,
+.gsc-reactions-menu button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.gsc-emoji-picker button:hover,
+.gsc-reactions-menu button:hover {
+  background-color: rgba(8, 145, 178, 0.5) !important; /* cyan-600/50 */
+  border-radius: 0.25rem !important;
+}
+
+/* Input and textarea - Make them more obvious */
+.gsc-comment-box,
+.gsc-comment-box-textarea,
+.gsc-comment-box-textarea:focus,
+textarea,
+input[type="text"] {
+  background-color: rgb(8, 51, 68) !important; /* darker cyan background */
+  color: rgb(226, 232, 240) !important; /* slate-200 */
+  border: 2px solid rgb(14, 116, 144) !important; /* cyan-700 - thicker border */
+  border-radius: 0.5rem !important;
+  padding: 0.75rem !important;
+}
+
+.gsc-comment-box-textarea:focus,
+textarea:focus,
+input[type="text"]:focus {
+  border-color: rgb(103, 232, 249) !important; /* cyan-300 - highlight on focus */
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.3) !important; /* glow effect */
+}
+
+.gsc-comment-box-textarea::placeholder,
+textarea::placeholder,
+input::placeholder {
+  color: rgb(148, 163, 184) !important; /* slate-400 */
+  opacity: 0.8 !important;
+}
+
+/* Buttons */
+.gsc-comment-box-button,
+button {
+  background-color: rgb(14, 116, 144) !important; /* cyan-700 */
+  color: rgb(226, 232, 240) !important; /* slate-200 */
+  border: none !important;
+  border-radius: 0.5rem !important;
+  font-family: 'Source Code Pro', monospace !important;
+}
+
+.gsc-comment-box-button:hover,
+button:hover {
+  background-color: rgb(8, 145, 178) !important; /* cyan-600 */
+}
+
+/* Reactions */
+.gsc-reactions-button {
+  background-color: rgba(21, 94, 117, 0.3) !important;
+  border: 1px solid rgb(14, 116, 144) !important;
+  color: rgb(226, 232, 240) !important;
+}
+
+.gsc-reactions-button:hover {
+  background-color: rgba(14, 116, 144, 0.5) !important;
+}
+
+/* Timeline */
+.gsc-timeline-header {
+  border-bottom: 1px solid rgba(14, 116, 144, 0.5) !important; /* cyan-700/50 */
+}
+
+/* Comment author */
+.gsc-comment-author-avatar {
+  border-radius: 9999px !important;
+}
+
+/* Tabs */
+.gsc-tab,
+.gsc-tab-reactions {
+  color: rgb(203, 213, 225) !important; /* slate-300 */
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.gsc-tab-active,
+.gsc-tab:hover {
+  color: rgb(103, 232, 249) !important; /* cyan-300 */
+  border-bottom: 2px solid rgb(103, 232, 249) !important; /* cyan-300 */
+}
+
+/* Loading skeleton */
+.gsc-loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(21, 94, 117, 0.2),
+    rgba(21, 94, 117, 0.4),
+    rgba(21, 94, 117, 0.2)
+  ) !important;
+}
+
+/* Code blocks */
+code,
+pre {
+  background-color: rgba(21, 94, 117, 0.3) !important;
+  color: rgb(103, 232, 249) !important; /* cyan-300 */
+  border: 1px solid rgb(14, 116, 144) !important; /* cyan-700 */
+  border-radius: 0.25rem !important;
+}
+
+/* Markdown content */
+.gsc-comment-content p {
+  color: rgb(226, 232, 240) !important; /* slate-200 */
+}
+
+.gsc-comment-content strong {
+  color: rgb(241, 245, 249) !important; /* slate-100 */
+}
+
+/* Reply button */
+.gsc-reply-button {
+  background-color: rgb(14, 116, 144) !important;
+  color: rgb(226, 232, 240) !important;
+}
+
+.gsc-reply-button:hover {
+  background-color: rgb(8, 145, 178) !important;
+}
+
+/* Dividers */
+.gsc-comment-footer {
+  border-top: 1px solid rgba(14, 116, 144, 0.5) !important;
+}
+
+/* Sign in button */
+.gsc-comment-box-md-toolbar {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(14, 116, 144, 0.3) !important;
+}
