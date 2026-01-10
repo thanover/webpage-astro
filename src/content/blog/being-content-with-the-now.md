@@ -1,7 +1,7 @@
 ---
 title: "Being Content with the Now"
 description: "Can being content with the present help us make better decisions?"
-pubDate: 2026-01-08
+pubDate: 2026-01-10
 author: "Thomas Hanover"
 tags: ["money", "life"]
 ---

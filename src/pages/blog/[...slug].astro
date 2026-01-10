@@ -33,7 +33,8 @@ const { Content } = await entry.render();
 						{entry.data.pubDate.toLocaleDateString('en-US', {
 							year: 'numeric',
 							month: 'long',
-							day: 'numeric'
+							day: 'numeric',
+							timeZone: 'UTC'
 						})}
 					</time>
 					<span>•</span>
