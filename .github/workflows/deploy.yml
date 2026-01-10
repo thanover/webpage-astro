@@ -31,8 +31,17 @@ jobs:
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
+        id: cloudflare_pages_deploy
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: webpage-astro
           directory: dist
+
+      - name: Add deployment URL to summary
+        run: |
+          echo "## Deployment Complete! 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "**Environment:** ${{ steps.cloudflare_pages_deploy.outputs.environment }}" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** ${{ steps.cloudflare_pages_deploy.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Alias:** ${{ steps.cloudflare_pages_deploy.outputs.alias }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Dashboard:** https://dash.cloudflare.com/7c37aad11bbdf49e5dff65f3cbbf3689/pages/view/webpage-astro" >> $GITHUB_STEP_SUMMARY
