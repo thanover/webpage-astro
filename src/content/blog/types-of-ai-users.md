@@ -2,8 +2,8 @@
 title: "Types of AI Users"
 description: "What type of AI user should you be?"
 pubDate: 2026-01-18
-author: "Thomas Hanover"
-tags: ["AI", "work", "productivity"]
+author: "Tom Hanover"
+tags: ["ai", "work", "productivity"]
 ---
 
 It's now clear that to succeed in most jobs, you need to leverage AI. At minimum, AI provides efficiency gains and handles routine tasks. Whether you're in an entry-level service role or stepping into an executive position, AI has something to offer.

@@ -17,18 +17,18 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout pageTitle={`${entry.data.title} - Thomas Hanover`} description={entry.data.description}>
+<BaseLayout pageTitle={`${entry.data.title} - Tom Hanover`} description={entry.data.description}>
 	<div class="p-6">
 		<article class="max-w-3xl mx-auto">
 			<header class="mb-12">
-				<a href="/blog" class="text-cyan-300 hover:text-cyan-200 inline-flex items-center mb-6">
+				<a href="/blog" class="text-ctp-teal hover:text-ctp-teal/80 inline-flex items-center mb-6">
 					<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
 					</svg>
 					Back to Blog
 				</a>
 				<h1 class="text-5xl font-bold mb-4">{entry.data.title}</h1>
-				<div class="flex items-center gap-4 text-slate-300">
+				<div class="flex items-center gap-4 text-ctp-subtext1">
 					<time datetime={entry.data.pubDate.toISOString()}>
 						{entry.data.pubDate.toLocaleDateString('en-US', {
 							year: 'numeric',
@@ -45,7 +45,7 @@ const { Content } = await entry.render();
 						{entry.data.tags.map((tag) => (
 							<a
 								href={`/blog/tag/${tag}`}
-								class="bg-cyan-700 px-3 py-1 rounded text-sm hover:bg-cyan-600 transition-colors"
+								class="bg-ctp-teal text-ctp-crust px-3 py-1 rounded text-sm lowercase hover:bg-ctp-teal/80 transition-colors"
 							>
 								{tag}
 							</a>
@@ -55,27 +55,27 @@ const { Content } = await entry.render();
 			</header>
 
 			<div class="prose prose-invert prose-lg max-w-none
-				prose-headings:text-slate-100
-				prose-p:text-slate-200
-				prose-a:text-cyan-300 prose-a:no-underline hover:prose-a:text-cyan-200
-				prose-strong:text-slate-100
-				prose-code:text-cyan-300 prose-code:bg-cyan-900/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-				prose-pre:bg-cyan-900/30 prose-pre:border prose-pre:border-cyan-700
-				prose-ul:text-slate-200
-				prose-ol:text-slate-200
-				prose-li:text-slate-200
+				prose-headings:text-ctp-text
+				prose-p:text-ctp-text
+				prose-a:text-ctp-teal prose-a:no-underline hover:prose-a:text-ctp-teal/80
+				prose-strong:text-ctp-text
+				prose-code:text-ctp-teal prose-code:bg-ctp-surface0 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+				prose-pre:bg-ctp-surface0 prose-pre:border prose-pre:border-ctp-surface1
+				prose-ul:text-ctp-text
+				prose-ol:text-ctp-text
+				prose-li:text-ctp-text
 				prose-h1:font-bold prose-h2:font-bold prose-h3:font-bold
 				">
 				<Content />
 			</div>
 
-			<section class="mt-12 pt-8 border-t border-cyan-700/50">
+			<section class="mt-12 pt-8 border-t border-ctp-surface1/50">
 				<h2 class="text-2xl font-bold mb-6">Comments</h2>
 				<div class="giscus"></div>
 			</section>
 
-			<footer class="mt-12 pt-8 border-t border-cyan-700/50">
-				<a href="/blog" class="text-cyan-300 hover:text-cyan-200 inline-flex items-center">
+			<footer class="mt-12 pt-8 border-t border-ctp-surface1/50">
+				<a href="/blog" class="text-ctp-teal hover:text-ctp-teal/80 inline-flex items-center">
 					<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
 					</svg>
@@ -96,7 +96,7 @@ const { Content } = await entry.render();
 			script.setAttribute('data-reactions-enabled', '1');
 			script.setAttribute('data-emit-metadata', '0');
 			script.setAttribute('data-input-position', 'bottom');
-			script.setAttribute('data-theme', 'transparent_light');
+			script.setAttribute('data-theme', 'catppuccin_mocha');
 			script.setAttribute('data-lang', 'en');
 			script.setAttribute('crossorigin', 'anonymous');
 			script.async = true;

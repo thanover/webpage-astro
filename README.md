@@ -1,4 +1,4 @@
-# Thomas Hanover - Personal Website
+# Tom Hanover - Personal Website
 
 A personal portfolio and blog
 
