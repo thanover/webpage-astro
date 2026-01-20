@@ -2,7 +2,7 @@
 title: "AI Supercharges the 'Best' Software Solutions"
 description: "Does AI adoption by software engineers lead to the best solutions being used?"
 pubDate: 2026-01-08
-author: "Thomas Hanover"
+author: "Tom Hanover"
 tags: ["ai", "software engineering", "shower thoughts"]
 ---
 
